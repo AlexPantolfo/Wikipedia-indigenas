@@ -1,10 +1,33 @@
 let loading = false;
-let comunidades = JSON.parse(localStorage.getItem('Comunidades'));
-let ocorrencias = JSON.parse(localStorage.getItem('Ocorrencias'));
-let s = comunidades.concat(ocorrencias);
+let s = [];
 let tamanho = '';
 let searchString = '';
 const searchBar = document.getElementById('search-bar');
+
+async function loadtribes(force = false) {
+
+    if (localStorage.getItem('db') === null || JSON.parse(localStorage.getItem('counter')) > 9 || force) {
+        // não armazenou tribos no Storage
+        loading = true;
+        const res = await fetch('https://wiki.previa.app/api/search/?fl=name,imagem,localizacao,paragrafo,familiaLinguistica,slug,module,description&rows=999&sort=titleAlpha ASC');
+        const tribos = await res.json();
+        loading = false;
+        s = tribos.docs;
+
+        localStorage.setItem('db', JSON.stringify(s));
+        localStorage.setItem('comunidades', JSON.stringify(s.filter(a => {
+            return (a.module == "comunidade")
+        })));
+        localStorage.setItem('counter', 0);
+
+    } else {
+        s = JSON.parse(localStorage.getItem('db'));
+        let counter = JSON.parse(localStorage.getItem('counter'));
+        localStorage.setItem('counter', counter + 1);
+    }
+
+}
+loadtribes();
 
 searchBar.addEventListener('keyup', (e) => {
     var searchString = (e.target.value.toLowerCase());
@@ -17,6 +40,7 @@ searchBar.addEventListener('keyup', (e) => {
                 valortribo.name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().includes(buscafinal)
             );
         }
+
     });
     tamanho = filteredtribes.length;
 

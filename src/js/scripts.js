@@ -9,9 +9,9 @@ function random(min, max) {
 var Header = {
 
 	mainImages: [
-		'https://pib.socioambiental.org/images/povos/76983097518bfcf79468b.jpg',
-		'https://pib.socioambiental.org/images/povos/14873561034e42db5ff41c8.jpg',
-		'https://pib.socioambiental.org/images/povos/155235493054457896c7136.jpg'
+		'https://img.freepik.com/fotos-gratis/retrato-do-indio-americano-em-pe-contra-a-floresta_35752-1789.jpg?w=2000',
+		'https://mega.ibxk.com.br///2016/06/30/30095831052046.jpg?ims=1200x480',
+		'https://conexaoenergetica.com.br/wp-content/uploads/2013/10/Indios-do-Brasil-1200x520.jpg'
 	],
 
 	init: () => {

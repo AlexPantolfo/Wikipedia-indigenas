@@ -13,17 +13,19 @@
 
 <body class="forms cadastre home">
     <header class="header-tamanho-letra">
-        <nav class="navbar  navbar-light navbar-expand-sm color-bg fixed-top cor-nav">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="./index.html"><img src="imagem/wiki-imagem.png"></a>
+                <a class="navbar-brand imagem-padding" href="./index.html"><img src="imagem/wiki-imagem.png"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="./cadastre-sua-comunidade.html">Cadastre sua comunidade</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./ocorrencias.html">Ocorrências</a></li>
-                        <li class="nav-item"><a class="nav-link" href="registrar-ocorrencia.html">Registre sua ocorrência</a></li>
+                        <li class="nav-item"><a class="nav-link header-titulo " href="./cadastre-sua-comunidade.html">Cadastre sua comunidade</a></li>
+                        <li class="nav-item"><a class="nav-link header-titulo" href="./ocorrencias.html">Ocorrências</a></li>
+                        <li class="nav-item"><a class="nav-link header-titulo" href="./registrar-ocorrencia.html">Registre sua ocorrência</a></li>
+                        <li class="nav-item"><a class="nav-link header-titulo" href="./cadastro.html">Registrar</a></li>
+                        <li class="nav-item"><a class="nav-link header-titulo" href="./login.html">Login</a></li>
                     </ul>
                     <div class="searchBar">
                         <div class="input-group">
@@ -55,22 +57,22 @@
             <form class="alinhar-centro" id="cadastreComunidade">
                 <h4>Dados da comunidade</h4>
                 <div class="form-group">
-                    <label for="name">Nome da comunidade </label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="">
+                    <label for="name">Nome da comunidade: *</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="" required>
                 </div>
 
                 <div class="form-group espaco">
-                    <label for="autodominacao">Autodenominação  </label>
-                    <input type="text" class="form-control" id="autodominacao" name="autodominacao" placeholder="">
+                    <label for="autodominacao">Autodenominação: *</label>
+                    <input type="text" class="form-control" id="autodominacao" name="autodominacao" placeholder="" required>
                 </div>
                 <div class="form-group espaco">
-                    <label for="familiaLinguistica">Família Linguística  </label>
-                    <input type="text" class="form-control" id="familiaLinguistica" name="familiaLinguistica" placeholder="">
+                    <label for="familiaLinguistica">Família Linguística: *</label>
+                    <input type="text" class="form-control" id="familiaLinguistica" name="familiaLinguistica" placeholder="" required>
                 </div>
 
                 <div class=" espaco">
                     <label for="localizacao">Principal estado de localização do território </label>
-                    <select name="localizacao" class="form-control form-control-sm">
+                    <select name="localizacao" class="form-select form-control-sm" required>
                   <option selected> Selecione</option>
                   <option value="AC">Acre</option>
                   <option value="AL">Alagoas</option>
@@ -103,26 +105,26 @@
                 </div>
 
                 <div class="form-group espaco">
-                    <label for="populacao">Tamanho da População  </label>
-                    <input type="text" class="form-control" id="populacao" name="populacao" placeholder="">
+                    <label for="populacao">Tamanho da População: *</label>
+                    <input type="text" class="form-control" id="populacao" name="populacao" placeholder="" required>
                 </div>
         
 
         <div class="form-group espaco ">
             <label for="paragrafo">Descreva sua comunidade </label>
-            <textarea class="form-control" id="paragrafo" name="paragrafo" id="paragrafo" rows="3"></textarea>
+            <textarea class="form-control" id="paragrafo" name="paragrafo" id="paragrafo" rows="3" required></textarea>
         </div>
 
         <h4>Seus dados</h4>
 
         <div class="form-group espaco ">
-            <label for="autor">Nome </label>
-            <input type="text" class="form-control" id="autor" name="autor" placeholder="">
+            <label for="autor">Nome: *</label>
+            <input type="text" class="form-control" id="autor" name="autor" placeholder="" required>
         </div>
 
         <div class="form-group espaco ">
-            <label for="name">E-mail </label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="">
+            <label for="name">E-mail: *</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="" required>
         </div>
 
         <div class="row">
@@ -135,14 +137,13 @@
       </section>
             
             <!-- Footer -->
-            <footer class="text-center text-white" style="background-color: #ccc">
-                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                    © 2021 Copyright:
-                    <a class="text-white underline-text" href="index.html">Wikipédia Indígena</a>
+            <footer class="text-center text-white" style="color: black;">
+                <div class="text-center p-3 cor-letra" style="background-color: #e7e0e0;" >
+                    © 2022 Copyright:
+                    <a class="text-white underline-text cor-letra" href="index.html">Wikipédia Indígena</a>
                 </div>
             </footer>
             <!-- Footer -->
-
     </main>
 
 </body>
