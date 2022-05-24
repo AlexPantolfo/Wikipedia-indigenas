@@ -1,5 +1,5 @@
 let init = () => {
-    window.comunidades = JSON.parse(localStorage.getItem('Comunidades'));
+    window.comunidades = JSON.parse(localStorage.getItem('comunidades'));
 
     i18n = {
         "AC": "Acre",
@@ -108,7 +108,7 @@ let init = () => {
             i18n[a.slug] = a.name;
         }
     })
- }
+}
 
 
 
@@ -126,6 +126,7 @@ const Home = {
 
                 let tpl = '<table>';
 
+
                 r.docs.forEach(a => {
                     if (a.name != '' && a.name != 'undefined') {
 
@@ -135,8 +136,8 @@ const Home = {
                         }
 
                         tpl +=
-                            `<tr>
-                <td style="padding-right:1rem">${i18n[a.name]}</td>
+                            `<tr style="padding-right:10rem">
+                <td style="padding-right:10rem">${i18n[a.name]}</td>
                 <td>${description}</td>
               </tr>`
                     }
