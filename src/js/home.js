@@ -1,5 +1,5 @@
 let init = () => {
-    window.comunidades = JSON.parse(localStorage.getItem('comunidades'));
+    window.comunidades = JSON.parse(localStorage.getItem('Comunidades'));
 
     i18n = {
         "AC": "Acre",
