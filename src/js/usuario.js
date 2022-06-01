@@ -50,17 +50,14 @@ if (location.includes('cadastro') || location.includes('login')) {
       telefone: signupForm['telefone'].value,
       usuario: signupForm['autor'].value
   };
-     createUserWithEmailAndPassword(auth, email, password).then(cred => {
+     createUserWithEmailAndPassword(auth, email, password).then( async cred => {
            try {
-            setDoc(doc(db, "Users", cred.user.uid), data);
+            await setDoc(doc(db, "Users", cred.user.uid), data);
             alert("Usuário logado")
-            window.location = 'index.html';
-          } catch (e) {
-            alert("Não foi possível criar a conta")
-          }
-        }).catch((error) => {
-          alert(error)
-            });
+          } catch (e) {alert("Não foi possível criar a conta")}
+        }).then( () => {
+          window.location = 'index.html';
+        })
       });
     } else {
     // Login
