@@ -53,14 +53,13 @@ if (location.includes('cadastro') || location.includes('login')) {
      createUserWithEmailAndPassword(auth, email, password).then(cred => {
            try {
             setDoc(doc(db, "Users", cred.user.uid), data);
-            alert("Usuário criado")
+            alert("Usuário logado")
+            window.location = 'index.html';
           } catch (e) {
-            console.error("Error adding document: ", e);
+            alert("Não foi possível criar a conta")
           }
         }).catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorCode, errorMessage)
+          alert(error)
             });
       });
     } else {
