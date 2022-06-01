@@ -9,8 +9,9 @@ const firebaseConfig = {
   messagingSenderId: "741530916934",
   appId: "1:741530916934:web:c3c24fa5050745caecd247"
 };
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+export const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
+
 
 let comunidades = [];
 let contato = [];
