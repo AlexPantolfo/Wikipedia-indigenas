@@ -3,7 +3,6 @@ let comunidades = JSON.parse(localStorage.getItem('Comunidades'));
 let ocorrencias = JSON.parse(localStorage.getItem('Ocorrencias'));
 let s = comunidades.concat(ocorrencias);
 let tamanho = '';
-let searchString = '';
 const searchBar = document.getElementById('search-bar');
 
 searchBar.addEventListener('keyup', (e) => {

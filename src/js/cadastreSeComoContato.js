@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if(item.hasOwnProperty('name')){
           document.querySelector('select[name="name"]')
             .append(toElement(
+              
               `<option value="${item.slug}"${selected}>${item.name}</option>`
             ))  
         }
