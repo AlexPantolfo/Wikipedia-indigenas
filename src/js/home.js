@@ -119,15 +119,19 @@ const Home = {
     },
 
     ocorrencias: () => {
-        fetch('https://wiki.previa.app/api/search/?fq=module:ocorrencias&sort=sortDate DESC&rows=3')
-            .then(r => r.json())
-            .then(r => {
-                document.getElementById('ocorrenciasNumFound').innerText = r.numFound;
+        let ocorrencias = JSON.parse(localStorage.getItem('Ocorrencias'));
+        document.getElementById('ocorrenciasNumFound').innerText = ocorrencias.length;
+        let ultimasOcorrencias = [];
+        function get3ocorrencias(arr) {
+             for (var i = 0; i < 3; i++) {
+               ultimasOcorrencias.push(arr[i]); 
+            }
+            return ultimasOcorrencias
+          }
+     ultimasOcorrencias = get3ocorrencias(ocorrencias);
+            let tpl = '<table>';
 
-                let tpl = '<table>';
-
-
-                r.docs.forEach(a => {
+                ultimasOcorrencias.forEach(a => {
                     if (a.name != '' && a.name != 'undefined') {
 
                         let description = a.description;
@@ -136,8 +140,8 @@ const Home = {
                         }
 
                         tpl +=
-                            `<tr style="padding-right:10rem">
-                <td style="padding-right:10rem">${i18n[a.name]}</td>
+                            `<tr>
+                <td style="padding-right:1rem">${a.name}</td>
                 <td>${description}</td>
               </tr>`
                     }
@@ -146,7 +150,8 @@ const Home = {
 
                 document.getElementById('ocorrenciasLast').innerHTML = tpl;
 
-            });
+
+            
     },
 
     cards: () => {
